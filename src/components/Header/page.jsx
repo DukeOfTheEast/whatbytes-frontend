@@ -14,7 +14,7 @@ const Header = () => {
           height={300}
           className="w-6 h-6 rounded-full"
         />
-        <p>Ukachukwu Ebuka</p>
+        <p className="md:block hidden">Ukachukwu Ebuka</p>
       </div>
     </div>
   );

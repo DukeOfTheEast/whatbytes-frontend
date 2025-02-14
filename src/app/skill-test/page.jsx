@@ -26,10 +26,10 @@ const SkillTest = () => {
       <section className="md:ml-64 pt-16">
         <div className="p-10">
           <p className="mb-10">Skill Test</p>
-          <div className="flex gap-6">
-            <div>
-              <div className="inline-block">
-                <div className="flex items-center gap-2 border-2 p-3 rounded-lg">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="">
+              <div className="flex flex-col">
+                <div className="flex flex-col md:flex-row items-center gap-2 border-2 p-3 rounded-lg">
                   <Image
                     className="w-20 h-20"
                     src={HtmlImage}
@@ -53,7 +53,7 @@ const SkillTest = () => {
                 </div>
                 <div className="my-8 border-2 p-3 rounded-lg">
                   <p>Quick Statistics</p>
-                  <div className="flex justify-between m-5">
+                  <div className="flex flex-col md:flex-row gap-5 justify-between m-5">
                     <div className="flex items-center gap-3">
                       <Award
                         size={40}
@@ -100,19 +100,30 @@ const SkillTest = () => {
                     than the average percentile 72% of all the engineers who
                     took the assessment
                   </p>
-                  <PercentileGraph
-                    percentile={formData.percentile}
-                    width={600}
-                    height={200}
-                    showLabel={true}
-                    className="my-4"
-                  />
+                  <div className="hidden md:block">
+                    <PercentileGraph
+                      percentile={formData.percentile}
+                      width={600}
+                      height={200}
+                      showLabel={true}
+                      // className={"w-20 h-10"}
+                    />
+                  </div>
+                  <div className="block md:hidden">
+                    <PercentileGraph
+                      percentile={formData.percentile}
+                      width={250}
+                      height={150}
+                      showLabel={true}
+                      // className={"w-20 h-10"}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Second section */}
-            <div className="container mx-auto w-1/3 ">
+            <div className="mx-auto w-full md:w-1/3 ">
               <div className="border-2 p-6 rounded-lg flex flex-col gap-5">
                 <p className="font-bold">Syllabus Wise Analysis</p>
 
